@@ -1,7 +1,7 @@
 import React from "react";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import { useState } from "react";
-import App from './components/App';
+import Home from './components/home';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -15,7 +15,7 @@ const RouteSwitch = () => {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<App bag={bag}/>} />
+        <Route path="/" element={<Home />} />
       </Routes>
       <Footer />
     </BrowserRouter>
