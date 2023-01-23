@@ -7,15 +7,17 @@ import Footer from './components/Footer';
 
 
 const RouteSwitch = () => {
-  const defaultInventory = [];
-  const [inventory, setInventory] = useState(defaultInventory);
+  const inventory = [];
+  const [catalog, setCatalog] = useState(inventory);
   const [bag, setBag] = useState([]);
+  const [status, setStatus] = useState('All Products')
 
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar bag={bag}/>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/shop" element={<Shop status={status} catalog={catalog}/>} />
       </Routes>
       <Footer />
     </BrowserRouter>
