@@ -5,19 +5,27 @@ const Shop = (props) => {
         <div>
             <div className="leftColumn">
                 <div className="topContainer">
-                    <h6>Shop</h6>
+                    <h6>Shop/</h6>
                     <h1>{props.status}</h1>
                 </div>
                 <ul className="bottomContainer">
-                    <li>Hats</li>
-                    <li>Jackets</li>
-                    <li>Shirts</li>
-                    <li>Pants</li>
-                    <li>Shoes</li>
+                    <li onClick={(event) => props.changeStatus(event)}>Hats</li>
+                    <li onClick={(event) => props.changeStatus(event)}>Jackets</li>
+                    <li onClick={(event) => props.changeStatus(event)}>Shirts</li>
+                    <li onClick={(event) => props.changeStatus(event)}>Pants</li>
+                    <li onClick={(event) => props.changeStatus(event)}>Shoes</li>
                 </ul>
             </div>
             <div className="rightColumn">
-                /*map through catalog */
+                {props.catalog.map((element, id) => {
+                    return (
+                        <div className="product" key={`${element.name}${id}`}>
+                            <img src={element.image}></img>
+                            <div className="productName">{element.name}</div>
+                            <div className="price">{`$${element.price}`}</div>
+                        </div>
+                    )
+                })}
             </div>
         </div>
     )
