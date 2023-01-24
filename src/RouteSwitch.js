@@ -23,14 +23,14 @@ import tigerBack from './assets/tigerBack.jpg';
 
 const RouteSwitch = () => {
   const inventory = [
-    {type: 'shirt', name: 'Lakers Graphics T-Shirt', image: lakers, back: 'none', price: 45},
-    {type: 'shirt', name: 'Space Jam Graphics T-Shirt', image: spacejam, back: 'none', price: 35},
-    {type: 'shirt', name: 'Spongebob Lover Graphics T-Shirt', image: spongebob, back: spongebobBack, price: 35},
-    {type: 'shirt', name: 'Tiger Graphics T-Shirt', image: tiger, back: tigerBack, price: 50},
-    {type: 'pants', name: 'Black Skinny Jeans', image: blac, back: blackBack, price: 55},
-    {type: 'pants', name: 'Nethan Collection Cargo Pants', image: cargo, back: cargoBack, price: 70},
-    {type: 'pants', name: 'JD Collaboration Baggy Pants', image: baggy, back: baggyBack, price: 80},
-    {type: 'pants', name: 'Skinny Jeans', image: skinnyJeans, back: skinnyJeansBack, price: 45}
+    {type: 'Shirts', name: 'Lakers Graphics T-Shirt', image: lakers, back: 'none', price: 45},
+    {type: 'Shirts', name: 'Space Jam Graphics T-Shirt', image: spacejam, back: 'none', price: 35},
+    {type: 'Shirts', name: 'Spongebob Lover Graphics T-Shirt', image: spongebob, back: spongebobBack, price: 35},
+    {type: 'Shirts', name: 'Tiger Graphics T-Shirt', image: tiger, back: tigerBack, price: 50},
+    {type: 'Pants', name: 'Black Skinny Jeans', image: blac, back: blackBack, price: 55},
+    {type: 'Pants', name: 'Nethan Collection Cargo Pants', image: cargo, back: cargoBack, price: 70},
+    {type: 'Pants', name: 'JD Collaboration Baggy Pants', image: baggy, back: baggyBack, price: 80},
+    {type: 'Pants', name: 'Skinny Jeans', image: skinnyJeans, back: skinnyJeansBack, price: 45}
   ];
   const [catalog, setCatalog] = useState(inventory);
   const [bag, setBag] = useState([]);
@@ -40,8 +40,22 @@ const RouteSwitch = () => {
     setStatus(event.target.textContent);
   }
 
+  useEffect(() => {
+    let placeholder = [...inventory];
+    if(status == 'Shirts'){
+      placeholder = placeholder.filter((element) => element.type == 'Shirts');
+      setCatalog([...placeholder]);
+    } else if (status == 'Pants'){
+      placeholder = placeholder.filter((element) => element.type == 'Pants');
+      setCatalog([...placeholder]);
+    } else {
+      alert("FUCK U")
+    }
+  }, [status])
 
   /* useeffect render only items that match status*/
+
+  /* add to bag component*/
   return (
     <BrowserRouter>
       <Navbar bag={bag}/>
