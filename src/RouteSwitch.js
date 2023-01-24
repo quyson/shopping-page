@@ -53,15 +53,15 @@ const RouteSwitch = () => {
     }
   }, [status])
 
-  /* useeffect render only items that match status*/
-
-  /* add to bag component*/
+  const addBag = (event) => {
+    setBag([...bag ,event.target.value]);
+  }
   return (
     <BrowserRouter>
       <Navbar bag={bag}/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop status={status} catalog={catalog} changeStatus={changeStatus}/>} />
+        <Route path="/shop" element={<Shop status={status} catalog={catalog} changeStatus={changeStatus} addBag={addBag}/>} />
       </Routes>
     </BrowserRouter>
   )

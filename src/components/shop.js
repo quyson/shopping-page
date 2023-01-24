@@ -20,7 +20,7 @@ const Shop = (props) => {
                 {props.catalog.map((element, id) => {
                     return (
                         <div className="product" key={`${element.name}${id}`}>
-                            <img src={element.image}></img>
+                            <img src={element.image} value={`${element}`}></img>
                             <div className="productName">{element.name}</div>
                             <div className="price">{`$${element.price}`}</div>
                         </div>
