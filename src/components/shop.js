@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Shop = (props) => {
     return (
@@ -21,8 +22,10 @@ const Shop = (props) => {
                 {props.catalog.map((element, id) => {
                     return (
                         <div className="product" key={`${element.name}${id}`} value={`${element}`}>
-                            <img src={element.image}></img>
-                            <div className="productName">{element.name}</div>
+                            <Link to={`/shop/${element.name}`}>
+                                <img src={element.image}></img>
+                                <div className="productName">{element.name}</div>
+                            </Link>
                             <div className="price">{`$${element.price}`}</div>
                         </div>
                     )
