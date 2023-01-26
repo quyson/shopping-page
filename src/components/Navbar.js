@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (props) => {
     return (
         <div>
             <nav>
@@ -13,7 +13,7 @@ const Navbar = () => {
                         <h1>Shop</h1>
                     </Link>
                     <h1>Search</h1>
-                    <h1>Bag</h1>
+                    <h1 onClick={(event) => props.changeBag(event)}>Bag</h1>
                 </div>
             </nav>
         </div>

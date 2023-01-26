@@ -6,17 +6,32 @@ import Navbar from './components/Navbar';
 import Shop from './components/shop';
 import ItemDetail from "./item";
 import inventory from "./assets/data";
+import Bag from "./components/bag";
 
 const RouteSwitch = () => {
   const [catalog, setCatalog] = useState(inventory);
   const [bag, setBag] = useState([]);
   const [status, setStatus] = useState('All Products');
+  const [bagVisible, setBagVisible] = useState(false);
   const changeStatus = (event) => {
     setStatus(event.target.textContent);
   }
-  const addBag = (event) => {
-    setBag([...bag ,event.target.value]);
+  const addBag = (product) => {
+    setBag([...bag , product]);
   }
+
+  useEffect(() => {
+    console.log(bag);
+  }, [bag])
+
+  const changeBag = () => {
+    if(bagVisible == false){
+      setBagVisible(true);
+    } else {
+      setBagVisible(false);
+    }
+  }
+
   useEffect(() => {
     let placeholder = [...inventory];
     if(status == 'Shirts'){
@@ -41,11 +56,12 @@ const RouteSwitch = () => {
 
   return (
     <BrowserRouter>
-      <Navbar bag={bag}/>
+      <Navbar changeBag={changeBag}/>
+      {bagVisible == true ? <Bag bag={bag}/> : null}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop status={status} catalog={catalog} changeStatus={changeStatus} addBag={addBag}/>} />
-        <Route path="/shop/:id" element={<ItemDetail />} />
+        <Route path="/shop/:id" element={<ItemDetail addBag={addBag}/>} />
       </Routes>
     </BrowserRouter>
   )

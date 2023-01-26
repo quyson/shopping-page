@@ -2,7 +2,7 @@ import React from "react";
 
 const Button = (props) => {
     return (
-        <button>{props.word}</button>
+        <button onClick={() => props.addBag(props.product)}>{props.word}</button>
     )
 }
 
