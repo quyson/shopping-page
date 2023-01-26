@@ -1,0 +1,60 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.images {
+    margin-top: 1rem;
+    position: relative;
+}
+
+.JD {
+    color: white;
+    position: absolute;
+    bottom: 40px;
+    left: 50px;
+    font-weight: 900;
+    font-size: 2.5rem;
+    border: dashed white 5px;
+    padding: 1rem;
+}
+
+.JD h1{
+    font-weight: 900;
+    font-size: 2.5rem;
+    text-decoration: underline;
+    text-shadow: 2px 2px 3px black;
+}
+
+.JD text{
+    text-shadow: 2px 2px 3px black;
+    font-size: 1.25rem;
+}
+
+.bestSellers{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+}
+
+.bestSellersProducts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bestProductText{
+    font-size: 1rem;
+    font-weight: 700;
+    color: black;
+}
+
+.bestImage{
+    width: 250px;
+    height: 300px;
+}
+
+

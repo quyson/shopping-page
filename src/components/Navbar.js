@@ -1,19 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./navbar.css";
 
 const Navbar = (props) => {
     return (
         <div>
             <nav>
                 <Link to='/'>
-                    <h1>Title</h1>
+                    <h4>JD STORE</h4>
                 </Link>
                 <div className="leftNav">
                     <Link to='/shop'>
-                        <h1>Shop</h1>
+                        <h4>Shop</h4>
                     </Link>
-                    <h1>Search</h1>
-                    <h1 onClick={(event) => props.changeBag(event)}>Bag</h1>
+                    <h4>Search</h4>
+                    <h4 onClick={(event) => props.changeBag(event)}>Bag</h4>
                 </div>
             </nav>
         </div>
