@@ -3,6 +3,11 @@ import {Link} from 'react-router-dom';
 import "./home.css";
 import homeimage1 from '../assets/homeimage1.jpg'
 import inventory from "../assets/data";
+import About from "./about.js";
+import lia from '../assets/lia.jpeg';
+import yuna from '../assets/yuna.jpeg';
+import Button from "./button";
+import Membership from "./membership";
 
 const Home = () => {
     const newInventory = inventory.slice(0,4).concat(inventory.slice(10,11));
@@ -15,8 +20,9 @@ const Home = () => {
                     <text>Be the first to own the premium collection from world famous designer, Jonathan Do.</text>
                 </div>
             </div>
-            <h1>Best Sellers</h1>
-            <div className="bestSellers">
+            <div>
+                <h1>Best Sellers</h1>
+                <div className="bestSellers">
                 {newInventory.map((element, id) => {
                     return(
                         <Link to={`/shop/${element.name}`} key={`${element.name}${element.id}`}>
@@ -27,7 +33,23 @@ const Home = () => {
                         </Link>
                     )
                 })}
+                </div>
             </div>
+            <div className="trending">
+                <h1>Trending Now</h1>
+                <div className="imageContainer">
+                    <img src={lia}></img>
+                    <img src={yuna}></img>
+                    <div className="trendingInfo">
+                        <h1>Nethan AlphaTech Samurai Cyber Fleece</h1>
+                        <Link to={"./shop"}>
+                            <Button word={'Shop'}/> 
+                        </Link>
+                    </div>
+                </div>
+            </div>
+            <Membership />
+            <About />
         </div>
     )
 }
