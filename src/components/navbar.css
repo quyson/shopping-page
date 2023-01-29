@@ -1,9 +1,11 @@
 body {
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
 }
 
 nav {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
     background-color: rgb(27, 26, 26);
     color: white;
@@ -19,4 +21,23 @@ nav {
 a {  
     color: white;
     text-decoration: none;
+}
+
+.bag {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.bag div {
+    border: solid white .5px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    background-color: red;
 }

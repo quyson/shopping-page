@@ -21,7 +21,7 @@ const Home = () => {
                 </div>
             </div>
             <div>
-                <h1>Best Sellers</h1>
+                <h2>Best Sellers</h2>
                 <div className="bestSellers">
                 {newInventory.map((element, id) => {
                     return(
@@ -36,7 +36,7 @@ const Home = () => {
                 </div>
             </div>
             <div className="trending">
-                <h1>Trending Now</h1>
+                <h2>Popular Right Now</h2>
                 <div className="imageContainer">
                     <img src={lia}></img>
                     <img src={yuna}></img>

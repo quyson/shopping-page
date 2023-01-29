@@ -8,6 +8,7 @@
 .images {
     margin-top: 1rem;
     position: relative;
+    margin-bottom: 3rem;
 }
 
 .JD {
@@ -19,24 +20,26 @@
     font-size: 2.5rem;
     border: dashed white 5px;
     padding: 1rem;
+    width: 50%;
 }
 
 .JD h1{
+    font-family: 'Holtwood One SC', serif;
     font-weight: 900;
     font-size: 2.5rem;
-    text-decoration: underline;
     text-shadow: 2px 2px 3px black;
 }
 
 .JD text{
     text-shadow: 2px 2px 3px black;
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 
 .bestSellers{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
+    padding: 1rem;
 }
 
 .bestSellersProducts{
@@ -65,10 +68,10 @@
 .trending{
     display: flex;
     flex-direction: column;
-    margin-top: 5rem;
+    margin-top: 3rem;
 }
 
-.trending h1{
+h2{
     margin-left: 1rem;
 }
 
@@ -85,12 +88,16 @@
 }
 
 .trendingInfo{
+    border: dashed white 3px;
+    padding: 1rem;
+    font-family: 'Holtwood One SC', serif;
+    width: 40%;
     color: rgb(255, 255, 255);
     position: absolute;
     bottom: 100px;
     left: 50px;
-    text-shadow: 2px 2px 3px black;
-    font-size: 1.05rem;
+    text-shadow: 3px 3px 5px black;
+    font-size: 1.3rem;
 }
 
 .trendingInfo button {

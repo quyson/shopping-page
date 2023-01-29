@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./shop.css";
 
 const Shop = (props) => {
     return (
-        <div>
+        <div className="shopContainer">
             <div className="leftColumn">
                 <div className="topContainer">
                     <h6>Shop/</h6>
@@ -24,6 +25,8 @@ const Shop = (props) => {
                         <div className="product" key={`${element.name}${id}`} value={`${element}`}>
                             <Link to={`/shop/${element.name}`}>
                                 <img src={element.image}></img>
+                            </Link>
+                            <Link to={`/shop/${element.name}`}>
                                 <div className="productName">{element.name}</div>
                             </Link>
                             <div className="price">{`$${element.price}`}</div>

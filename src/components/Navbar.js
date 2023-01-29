@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
+import logo from '../assets/logo.jpg';
 
 const Navbar = (props) => {
     return (
@@ -14,7 +15,10 @@ const Navbar = (props) => {
                         <h4>Shop</h4>
                     </Link>
                     <h4>Search</h4>
-                    <h4 onClick={(event) => props.changeBag(event)}>Bag</h4>
+                    <div className="bag" onClick={(event) => props.changeBag(event)}>
+                        <h4>Bag</h4>
+                        <div>{props.bag.length}</div>
+                    </div>
                 </div>
             </nav>
         </div>

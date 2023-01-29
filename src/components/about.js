@@ -6,7 +6,7 @@ import "./about.css";
 const About = () => {
     return (
         <div className="ownerContainer">
-            <h1>About Us</h1>
+            <h2>About Us</h2>
             <div className="aboutContainer">
                 <img className="owner" src={jd}></img>
                 <div className="aboutText"> Hello. My name is Jonathan Do.

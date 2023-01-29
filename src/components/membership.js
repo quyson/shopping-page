@@ -6,7 +6,7 @@ import './membership.css';
 const Membership = () => {
     return (
         <div>
-            <h1 className="memberTitle">JD Membership</h1>
+            <h2 className="memberTitle">JD Membership</h2>
             <div className="memberContainer">
                 <div className="left">
                     <h1>BECOME A MEMBER</h1>
